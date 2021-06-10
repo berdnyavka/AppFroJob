@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.Company.BaseContrCompany">
+    <children>
+            <TableView fx:id="companies" layoutY="29.0" prefHeight="774.0" prefWidth="1000.0">
+                <columns>
+                    <TableColumn fx:id="companiesList" prefWidth="100.0" text="Название компании" />
+            <TableColumn fx:id="sum_receipt" prefWidth="100.0" text="Поступления за месяц" />
+            <TableColumn fx:id="sum_pay_true" prefWidth="100.0" text="Проведенные платежи" />
+            <TableColumn fx:id="sum_pay_false" prefWidth="100.0" text="Запланированные платежи " />
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+      <MenuBar prefHeight="32.0" prefWidth="1000.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Меню">
+               <items>
+                <MenuItem mnemonicParsing="false" onAction="#create" text="Создать компанию" />
+                <MenuItem mnemonicParsing="false" onAction="#edit" text="Записать изменения" />
+                  <MenuItem mnemonicParsing="false" onAction="#delete" text="Удалить компанию" />
+                  <MenuItem mnemonicParsing="false" onAction="#update" text="Обновить" />
+               </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Проекты">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showProjects" text="Показать список проектов" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Банки">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showBanks" text="Показать список банков" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Отчет">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#getReport" text="Вывести отчет" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Статистика">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showStatistic" text="Показать графики" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+    </children>
+</AnchorPane>

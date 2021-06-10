@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Properties>
+        <Property name="APP_LOG_ROOT">target</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="File" fileName="${APP_LOG_ROOT}/log_file.txt"
+                     filePattern="${APP_LOG_ROOT}/info-%d{yyyy-MM-dd}-%i.txt">
+            <PatternLayout
+                    pattern=" %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="trace" additivity="true">
+            <AppenderRef ref="File" />
+        </Root>
+    </Loggers>
+</Configuration>
